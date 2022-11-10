@@ -2,8 +2,13 @@
 import json
 from flask import Flask, Response
 import optparse
+import pandas as pd
 
 application = Flask(__name__)
+
+@application.route('/halo', methods=['GET'])
+def get():
+    return Response(json.dumps({'Output': 'Hello World Dunia'}), mimetype='application/json', status=200)
 
 @application.route('/', methods=['GET'])
 def get():
