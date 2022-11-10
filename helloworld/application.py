@@ -6,10 +6,6 @@ import pandas as pd
 
 application = Flask(__name__)
 
-@application.route('/halo', methods=['GET'])
-def get():
-    return Response(json.dumps({'Output': 'Hello World Dunia'}), mimetype='application/json', status=200)
-
 @application.route('/', methods=['GET'])
 def get():
     return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
@@ -17,6 +13,10 @@ def get():
 @application.route('/', methods=['POST'])
 def post():
     return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
+
+@application.route('/halo', methods=['GET'])
+def haloDunia():
+    return Response(json.dumps({'Output': 'Hello World Dunia'}), mimetype='application/json', status=200)
 
 if __name__ == '__main__':
     default_port = "80"
